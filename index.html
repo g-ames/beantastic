@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            font-family: 'Roboto', 'Helvetica';
+        }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #background-beans {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Adjust as necessary */
+            background-size: cover;
+            z-index: -10;
+        }
+
+        h1 {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.685);
+        }
+    </style>
+</head>
+
+<body>
+    <dialog id="shop-dialog" style="width: 100%; height: 100%;">
+        <h1>Shop</h1>
+        <h1><button onclick="hideShop();"><h1>Close</h1></button></h1>
+        <button onclick="stats.Money += stats.Beans / 100; stats.Beans = 0; infoBoardTick();">Beans to Money</button>
+        <div id="purchasables-div">
+        </div>
+    </dialog>
+    <h1 id="info-board"></h1>
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; position: absolute; top: 0px;">
+        <button style="width: 100px;height: 100px;visibility: hidden;">Settings</button>
+        <img src="can.png" id="beans-can" style="height: 33%; width: auto; z-index: 1;"></img>
+        <button style="width: 100px;height: 100px;visibility: hidden;" id="shop-button" onclick="showShop();">Shop</button>
+    </div>
+    <div id="background-beans"></div>
+</body>
+<footer>
+    <script src="background.js"></script>
+</footer>
+
+</html>
